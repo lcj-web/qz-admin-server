@@ -1,0 +1,22 @@
+server:
+  port: ${PORT:8080}
+
+spring:
+  application:
+    name: qz-server
+  datasource:
+    url: ${DB_URL:jdbc:postgresql://db.rwkyvnlmhwygkyyrrfjc.supabase.co:5432/postgres}
+    username: ${DB_USERNAME:postgres}
+    password: ${DB_PASSWORD:your-supabase-db-password}
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    open-in-view: false
+    show-sql: false
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+
+logging:
+  level:
+    org.hibernate.SQL: warn
+    com.qz.admin: info

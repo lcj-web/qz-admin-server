@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: qz-server
+    runtime: docker
+    plan: free
+    branch: master
+    healthCheckPath: /api/system/company
+    envVars:
+      - key: PORT
+        value: "8080"
+      - key: DB_URL
+        value: jdbc:postgresql://db.rwkyvnlmhwygkyyrrfjc.supabase.co:5432/postgres
+      - key: DB_USERNAME
+        value: postgres
+      - key: DB_PASSWORD
+        sync: false   # 在 Render 网页里手动填入 Supabase 数据库密码
